@@ -14,7 +14,7 @@
     <main>
       <div id="container">
         <div class="container-image">
-          <img src="assets/cover-1.png" id="cover" alt="foto de la canción" />
+          <img src="assets/img/cover-1.png" id="cover" alt="foto de la canción" />
         </div>
         <section class="container-information">
           <h1 id="title">Lost in the City Lights</h1>
@@ -23,18 +23,18 @@
         <section class="container-controls">
           <div class="container-controls-duration">
             <div class="container-controls-duration-time">
-              <span>02:23</span>
-              <span>03:15</span>
+              <span id="current-time">00:00</span>
+              <span id="total-time">00:00</span>
             </div>
             <!-- Aca va la barra -->
           </div>
           <div class="container-controls-play">
-            <img id="prev" src="assets/Stop_and_play_fill.svg" alt="prev">
+            <img id="prev" src="assets/img/Stop_and_play_fill.svg" alt="prev">
             <div id="play">
               <i id="label-play" class="fa-solid fa-play"></i>
               <!-- <i class="fa-solid fa-play"></i> -->
             </div>
-            <img id="next" src="assets/Stop_and_play_fill_reverse.svg" alt="next">
+            <img id="next" src="assets/img/Stop_and_play_fill_reverse.svg" alt="next">
           </div>
         </section>
       </div>
@@ -42,7 +42,7 @@
     <audio
       id="audio"
       controls
-      src="assets\lost-in-city-lights-145038.mp3"
+      src="assets/audio/lost-in-city-lights-145038.mp3"
       type="audio/mp3"
     ></audio>
     <script type="module" src="js/main.js"></script>

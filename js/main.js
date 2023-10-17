@@ -9,6 +9,8 @@ const prevButton = document.getElementById('prev');
 const imgCover = document.getElementById('cover');
 const authorLabel = document.getElementById('author');
 const titleLabel = document.getElementById('title');
+const currentTimeLabel = document.getElementById('current-time');
+const totalTimeLabel = document.getElementById('total-time');
 const limitSongs = Object.keys(data).length;
 let songActive = 1;
 
@@ -25,6 +27,19 @@ function playSong() {
   labelPlay.classList.add('fa-pause');
 }
 
+function timeFormat(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${(seconds < 10 ? '0' : '')}${seconds}`;
+}
+
+function showTime() {
+  const current = audio.currentTime;
+  const total = audio.duration;
+  currentTimeLabel.textContent = timeFormat(current);
+  totalTimeLabel.textContent = timeFormat(total);
+}
+
 function changeSong(option) {
   pauseSong();
   if (option === 'next') {
@@ -38,10 +53,10 @@ function changeSong(option) {
       songActive = limitSongs;
     }
   }
-  imgCover.src = `./assets/cover-${songActive}.png`;
+  imgCover.src = `assets/img/${data[songActive].cover}`;
   authorLabel.innerHTML = data[songActive].author;
   titleLabel.innerHTML = data[songActive].title;
-  audio.src = `assets/${data[songActive].src}`;
+  audio.src = `assets/audio/${data[songActive].src}`;
   playSong();
 }
 
@@ -60,3 +75,5 @@ buttonPlay.addEventListener('click', () => {
     playSong();
   }
 });
+
+audio.addEventListener('timeupdate', showTime);
