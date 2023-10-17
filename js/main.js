@@ -24,6 +24,7 @@ const limitSongs = Object.keys(data).length;
 
 let songActive = 1;
 let favorites = [];
+let userSeeking = false;
 
 function pauseSong() {
   audio.pause();
@@ -100,8 +101,10 @@ buttonPlay.addEventListener('click', () => {
 });
 
 audio.addEventListener('timeupdate', () => {
-  progressBar.value = (100 * audio.currentTime) / audio.duration;
-  showTime();
+  if (!userSeeking) {
+    progressBar.value = (100 * audio.currentTime) / audio.duration;
+    showTime();
+  }
 });
 
 repeatButton.addEventListener('click', () => {
@@ -121,6 +124,16 @@ heartButton.addEventListener('click', () => {
   }
 });
 
-progressBar.addEventListener('click', () => {
-  audio.currentTime = (progressBar.value * audio.duration) / 100;
+progressBar.addEventListener('input', () => {
+  if (userSeeking) {
+    audio.currentTime = (progressBar.value * audio.duration) / 100;
+  }
+});
+
+progressBar.addEventListener('mousedown', () => {
+  userSeeking = true;
+});
+
+progressBar.addEventListener('mouseup', () => {
+  userSeeking = false;
 });
