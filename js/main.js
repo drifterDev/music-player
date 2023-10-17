@@ -12,6 +12,7 @@ const buttonPlay = document.getElementById('play');
 const labelPlay = document.getElementById('label-play');
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
+const repeatButton = document.getElementById('repeat');
 const imgCover = document.getElementById('cover');
 const authorLabel = document.getElementById('author');
 const titleLabel = document.getElementById('title');
@@ -64,8 +65,11 @@ function showTime() {
   const total = audio.duration;
   currentTimeLabel.textContent = timeFormat(current);
   totalTimeLabel.textContent = timeFormat(total);
-  if (current === total) {
+  if (current === total && !repeatButton.classList.contains('on')) {
     changeSong('next');
+  } else if (current === total) {
+    audio.currentTime = 0;
+    playSong();
   }
 }
 
@@ -86,3 +90,8 @@ buttonPlay.addEventListener('click', () => {
 });
 
 audio.addEventListener('timeupdate', showTime);
+
+repeatButton.addEventListener('click', () => {
+  repeatButton.classList.toggle('on');
+  repeatButton.classList.toggle('off');
+});
