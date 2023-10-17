@@ -1,4 +1,11 @@
+/* Autor: Mateo Álvarez Murillo
+Fecha de creación: 2023
+
+Este código se proporciona bajo la Licencia MIT.
+Para más información, consulta el archivo LICENSE en la raíz del repositorio. */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap");
+
 :root {
   --rosa: #c93b76;
   --negroBg: rgba(33, 41, 54, 0.7);
@@ -51,12 +58,15 @@ main {
 
 .container-image {
   width: 100%;
+  height: calc(400px - 40px);
   padding: 20px;
 }
 
 .container-image img {
   width: 100%;
+  height: 100%;
   border-radius: 2rem;
+  object-fit: cover;
 }
 
 .container-information {

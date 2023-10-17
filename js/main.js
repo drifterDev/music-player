@@ -1,3 +1,9 @@
+// Autor: Mateo Álvarez Murillo
+// Fecha de creación: 2023
+
+// Este código se proporciona bajo la Licencia MIT.
+// Para más información, consulta el archivo LICENSE en la raíz del repositorio.
+
 import '../css/style.css';
 import data from './data';
 
@@ -57,7 +63,7 @@ function changeSong(option) {
   authorLabel.innerHTML = data[songActive].author;
   titleLabel.innerHTML = data[songActive].title;
   audio.src = `assets/audio/${data[songActive].src}`;
-  playSong();
+  // playSong();
 }
 
 nextButton.addEventListener('click', () => {
