@@ -35,9 +35,13 @@ html {
   font-size: 62.5%;
 }
 
+.bg{
+  display: none;
+}
+
 body {
   width: 96vw;
-  background-image: url("assets/img/bg.jpg");
+  background-image: url("/img/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }

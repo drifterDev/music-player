@@ -52,10 +52,10 @@ function changeSong(option) {
       songActive = limitSongs;
     }
   }
-  imgCover.src = `assets/img/${data[songActive].cover}`;
+  imgCover.src = `img/${data[songActive].cover}`;
   authorLabel.innerHTML = data[songActive].author;
   titleLabel.innerHTML = data[songActive].title;
-  audio.src = `assets/audio/${data[songActive].src}`;
+  audio.src = `audio/${data[songActive].src}`;
   playSong();
 }
 
