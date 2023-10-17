@@ -76,15 +76,17 @@ main {
 .container-information {
   width: 100%;
   display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 0;
 }
 
-.container-information > i{
-  position: absolute;
-  top: 5px;
-  right: 30px;
+#repeat{
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+#heart{
   font-size: 2.5rem;
   cursor: pointer;
   transition: all 300ms ease;

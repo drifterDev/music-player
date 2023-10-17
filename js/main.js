@@ -13,6 +13,7 @@ const labelPlay = document.getElementById('label-play');
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
 const repeatButton = document.getElementById('repeat');
+const heartButton = document.getElementById('heart');
 const imgCover = document.getElementById('cover');
 const authorLabel = document.getElementById('author');
 const titleLabel = document.getElementById('title');
@@ -20,6 +21,7 @@ const currentTimeLabel = document.getElementById('current-time');
 const totalTimeLabel = document.getElementById('total-time');
 const limitSongs = Object.keys(data).length;
 let songActive = 1;
+let favorites = [];
 
 function pauseSong() {
   audio.pause();
@@ -41,6 +43,8 @@ function timeFormat(time) {
 }
 
 function changeSong(option) {
+  heartButton.classList.remove('on');
+  heartButton.classList.add('off');
   pauseSong();
   if (option === 'next') {
     songActive += 1;
@@ -57,6 +61,10 @@ function changeSong(option) {
   authorLabel.innerHTML = data[songActive].author;
   titleLabel.innerHTML = data[songActive].title;
   audio.src = `audio/${data[songActive].src}`;
+  if (favorites.includes(songActive)) {
+    heartButton.classList.remove('off');
+    heartButton.classList.add('on');
+  }
   playSong();
 }
 
@@ -94,4 +102,16 @@ audio.addEventListener('timeupdate', showTime);
 repeatButton.addEventListener('click', () => {
   repeatButton.classList.toggle('on');
   repeatButton.classList.toggle('off');
+});
+
+heartButton.addEventListener('click', () => {
+  if (heartButton.classList.contains('on')) {
+    heartButton.classList.remove('on');
+    heartButton.classList.add('off');
+    favorites = favorites.filter((item) => item !== songActive);
+  } else {
+    heartButton.classList.remove('off');
+    heartButton.classList.add('on');
+    favorites.push(songActive);
+  }
 });
