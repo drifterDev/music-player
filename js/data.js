@@ -55,6 +55,18 @@ const data = {
     author: 'Fifty sounds',
     src: 'The Beginning.mp3',
   },
+  9: {
+    cover: 'pexels-benjamin-suter-3733269.jpg',
+    title: 'Road trip',
+    author: 'Fifty sounds',
+    src: 'Road Trip.mp3',
+  },
+  10: {
+    cover: 'pexels-cottonbro-studio-7095506.jpg',
+    title: 'A little bit of rhythm',
+    author: 'Fifty sounds',
+    src: 'A Little Bit of Rhythm.mp3',
+  },
 };
 
 export default data;
