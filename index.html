@@ -1,21 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script src="https://kit.fontawesome.com/895570cd0e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/895570cd0e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main>
       <div id="container">
         <div class="container-image">
-          <img src="assets/cover-1.png" alt="foto de la canción">
+          <img src="assets/cover-1.png" id="cover" alt="foto de la canción" />
         </div>
         <section class="container-information">
-          <h1>Lost in the City Lights</h1>
-          <p>Cosmo Sheldrake</p>
+          <h1 id="title">Lost in the City Lights</h1>
+          <p id="author">Cosmo Sheldrake</p>
         </section>
         <section class="container-controls">
           <div class="container-controls-duration">
@@ -23,6 +26,12 @@
               <span>02:23</span>
               <span>03:15</span>
             </div>
+            <audio
+              id="audio"
+              controls
+              src="assets\lost-in-city-lights-145038.mp3"
+              type="audio/mp3"
+            ></audio>
             <!-- Aca va la barra -->
           </div>
           <div class="container-controls-play">
