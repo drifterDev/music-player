@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Music player</title>
     <script
       src="https://kit.fontawesome.com/895570cd0e.js"
       crossorigin="anonymous"
@@ -26,25 +26,25 @@
               <span>02:23</span>
               <span>03:15</span>
             </div>
-            <audio
-              id="audio"
-              controls
-              src="assets\lost-in-city-lights-145038.mp3"
-              type="audio/mp3"
-            ></audio>
             <!-- Aca va la barra -->
           </div>
           <div class="container-controls-play">
-            <i id="prev" class="fa-solid fa-backward-fast"></i>
+            <img id="prev" src="assets/Stop_and_play_fill.svg" alt="prev">
             <div id="play">
-              <i id="label-play" class="fa-solid fa-pause"></i>
+              <i id="label-play" class="fa-solid fa-play"></i>
               <!-- <i class="fa-solid fa-play"></i> -->
             </div>
-            <i id="next" class="fa-solid fa-forward-fast"></i>
+            <img id="next" src="assets/Stop_and_play_fill_reverse.svg" alt="next">
           </div>
         </section>
       </div>
     </main>
+    <audio
+      id="audio"
+      controls
+      src="assets\lost-in-city-lights-145038.mp3"
+      type="audio/mp3"
+    ></audio>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

@@ -12,7 +12,21 @@ const titleLabel = document.getElementById('title');
 const limitSongs = Object.keys(data).length;
 let songActive = 1;
 
+function pauseSong() {
+  audio.pause();
+  labelPlay.classList.remove('fa-pause');
+  labelPlay.classList.add('fa-play');
+}
+
+function playSong() {
+  audio.volume = 0.4;
+  audio.play();
+  labelPlay.classList.remove('fa-play');
+  labelPlay.classList.add('fa-pause');
+}
+
 function changeSong(option) {
+  pauseSong();
   if (option === 'next') {
     songActive += 1;
     if (songActive > limitSongs) {
@@ -28,6 +42,7 @@ function changeSong(option) {
   authorLabel.innerHTML = data[songActive].author;
   titleLabel.innerHTML = data[songActive].title;
   audio.src = `assets/${data[songActive].src}`;
+  playSong();
 }
 
 nextButton.addEventListener('click', () => {
@@ -39,6 +54,9 @@ prevButton.addEventListener('click', () => {
 });
 
 buttonPlay.addEventListener('click', () => {
-  labelPlay.classList.toggle('fa-pause');
-  labelPlay.classList.toggle('fa-play');
+  if (labelPlay.classList.contains('fa-pause')) {
+    pauseSong();
+  } else {
+    playSong();
+  }
 });
