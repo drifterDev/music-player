@@ -17,9 +17,11 @@ const heartButton = document.getElementById('heart');
 const imgCover = document.getElementById('cover');
 const authorLabel = document.getElementById('author');
 const titleLabel = document.getElementById('title');
+const progressBar = document.getElementById('duration');
 const currentTimeLabel = document.getElementById('current-time');
 const totalTimeLabel = document.getElementById('total-time');
 const limitSongs = Object.keys(data).length;
+
 let songActive = 1;
 let favorites = [];
 
@@ -97,7 +99,10 @@ buttonPlay.addEventListener('click', () => {
   }
 });
 
-audio.addEventListener('timeupdate', showTime);
+audio.addEventListener('timeupdate', () => {
+  progressBar.value = (100 * audio.currentTime) / audio.duration;
+  showTime();
+});
 
 repeatButton.addEventListener('click', () => {
   repeatButton.classList.toggle('on');
@@ -114,4 +119,8 @@ heartButton.addEventListener('click', () => {
     heartButton.classList.add('on');
     favorites.push(songActive);
   }
+});
+
+progressBar.addEventListener('click', () => {
+  audio.currentTime = (progressBar.value * audio.duration) / 100;
 });
