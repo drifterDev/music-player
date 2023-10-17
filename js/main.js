@@ -39,13 +39,6 @@ function timeFormat(time) {
   return `${minutes}:${(seconds < 10 ? '0' : '')}${seconds}`;
 }
 
-function showTime() {
-  const current = audio.currentTime;
-  const total = audio.duration;
-  currentTimeLabel.textContent = timeFormat(current);
-  totalTimeLabel.textContent = timeFormat(total);
-}
-
 function changeSong(option) {
   pauseSong();
   if (option === 'next') {
@@ -63,7 +56,17 @@ function changeSong(option) {
   authorLabel.innerHTML = data[songActive].author;
   titleLabel.innerHTML = data[songActive].title;
   audio.src = `assets/audio/${data[songActive].src}`;
-  // playSong();
+  playSong();
+}
+
+function showTime() {
+  const current = audio.currentTime;
+  const total = audio.duration;
+  currentTimeLabel.textContent = timeFormat(current);
+  totalTimeLabel.textContent = timeFormat(total);
+  if (current === total) {
+    changeSong('next');
+  }
 }
 
 nextButton.addEventListener('click', () => {

@@ -15,13 +15,13 @@ const data = {
   },
   2: {
     cover: 'pexels-samson-katt-5255249.jpg',
-    title: 'Haz que pase',
+    title: 'Make it happen',
     author: 'Fifty sounds',
     src: 'Make It Happen.mp3',
   },
   3: {
     cover: 'pexels-allan-mas-5383501.jpg',
-    title: 'Sólo los valientes',
+    title: 'Only the braves',
     author: 'Fifty sounds',
     src: 'Only the Braves - FiftySounds.mp3',
   },
@@ -33,9 +33,27 @@ const data = {
   },
   5: {
     cover: 'pexels-eberhard-grossgasteiger-1120967.jpg',
-    title: 'En tus manos',
+    title: 'In your hands',
     author: 'Fifty sounds',
     src: 'In Your Hands.mp3',
+  },
+  6: {
+    cover: 'pexels-cliford-mervil-2398220.jpg',
+    title: 'Sweet moments',
+    author: 'Fifty sounds',
+    src: 'Sweet Moments.mp3',
+  },
+  7: {
+    cover: 'pexels-robert-gruszecki-18537929.jpg',
+    title: 'The wild side',
+    author: 'Fifty sounds',
+    src: 'The Wild Side.mp3',
+  },
+  8: {
+    cover: 'pexels-pixabay-160767.jpg',
+    title: 'The beginning',
+    author: 'Fifty sounds',
+    src: 'The Beginning.mp3',
   },
 };
 
