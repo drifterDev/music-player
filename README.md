@@ -67,7 +67,7 @@ Las canciones utilizadas en este proyecto han sido obtenidos de Fifty Sounds, un
 Las canciones utilizadas son las siguientes:
 
 * Obra: Haz Que Pase, Música de [Fifty sounds](https://www.fiftysounds.com/es/)
-* Obra: Sólo los Valientes, Música de [Fifty sounds](https://www.fiftysounds.com/es/)
+* Obra: Solo los Valientes, Música de [Fifty sounds](https://www.fiftysounds.com/es/)
 * Obra: En Tus Manos, Música de [Fifty sounds](https://www.fiftysounds.com/es/)
 * Obra: Momentos Dulces, Música de [Fifty sounds](https://www.fiftysounds.com/es/)
 * Obra: El Lado Salvaj,  Música de[Fifty sounds]( https://www.fiftysounds.com/es)
